@@ -31,6 +31,10 @@
     background-position: 7% 0%; } }
 
 .hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
   padding: 1rem;
   -webkit-animation: 100s scroll infinite linear;
   -moz-animation: 100s scroll infinite linear;
@@ -58,14 +62,18 @@
 @keyframes scroll {
   100% {
     background-position: 0px -3000px; } }
-  .hero .logo {
-    padding: none;
-    height: 40%;
-    width: 40%; }
-  .hero .header_text {
+  .hero .logo_wrapper {
+    width: 9rem;
+    height: 9rem;
+    margin: 1rem; }
+    .hero .logo_wrapper .logo {
+      padding: none;
+      height: 100%;
+      width: auto; }
+  .hero .header_text .tagline {
     margin: .2rem;
     color: white; }
-  .hero .subheader_text {
+  .hero .header_text .subheader_text {
     color: white; }
 
 /* Larger than phablet (also point when grid becomes active) */
