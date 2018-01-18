@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="6in" height="5in" viewBox="0 0 432 360">
   <title>jslogo</title>
-  <g class="mono" fill="rgba(255,255,255, .2)">
+  <g class="mono" fill="rgba(255,255,255, 1)">
     <path d="M432.25,72.25v36a107.79,107.79,0,0,0-6.15-36Z"/>
     <path d="M432.25,288.25v72h-72V354.1a108.24,108.24,0,0,0,65.85-65.85Z"/>
     <path d="M432.25,252.25v36H426.1A107.79,107.79,0,0,0,432.25,252.25Z"/>
