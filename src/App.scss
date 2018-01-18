@@ -37,10 +37,12 @@
 
   .logo {
     background-color: rgba(255,255,255,.2);
-    padding: auto;
-    border-radius: .5rem;
+    padding: none;
     height: 40%;
     width: 40%;
+    .mono {
+      fill: green;
+    }
   
   
   }
@@ -53,7 +55,9 @@
   }
 }
 
-
+.logo_svg {
+  fill: green;
+}
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
 
