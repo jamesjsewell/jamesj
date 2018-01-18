@@ -1,12 +1,14 @@
 .App {
+  padding: none;
+  margin: none;
   text-align: center;
   background: linear-gradient(270deg, #246655, #372466);
   background-size: 400% 400%;
 
-  -webkit-animation: AnimationName 30s ease infinite;
-  -moz-animation: AnimationName 30s ease infinite;
-  -o-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  -o-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
 
   @-webkit-keyframes AnimationName {
       0%{background-position:0% 50%}
@@ -30,21 +32,41 @@
   }
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.hero{
+  padding: 1rem;
+
+  .logo {
+    background-color: rgba(255,255,255,.2);
+    padding: auto;
+    border-radius: .5rem;
+    height: 40%;
+    width: 40%;
+  
+  
+  }
+  
+  .header_text {
+    background-color: rgba(255,255,255,.2);
+    border-radius: .5rem;
+    padding: .2rem;
+    margin: .2rem;
+  }
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+
+  .hero{
+    padding: 1rem;
+
+    .logo{
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+
 }
 
 
