@@ -12,7 +12,7 @@ class App extends Component {
               <img className="logo u-max-full-width" src={logo} alt="logo" />  
             
           </div>
-          <div className="header_text"><h5 className="tagline">James Sewell - Front End Engineer</h5> <p className="subheader_text">Houston, TX</p></div>
+          <div className="header_text"><h5 className="tagline">FRONT END ENGINEER</h5> <p className="subheader_text">Houston, TX</p></div>
         </header>
       </div>
     );
