@@ -1,9 +1,11 @@
 
-
+html{
+  background-color: black;
+}
 .App {
   background: linear-gradient(320deg, #312466, #246641);
   background-size: 400% 400%;
-  height: 100vh;
+  background-attachment: fixed;
 }
 
 .hero_wrapper{
@@ -36,7 +38,7 @@
 
     .header_text{
       .tagline {
-        font-style: italic;
+        font-weight: bolder;
         margin: .2rem;
         color: white;
       }
@@ -58,9 +60,8 @@
     justify-content: center;
     background-position: center;
     background-size: 4%;
-    background: linear-gradient(320deg, rgba(255,255,255,.2), rgba(255,255,255,.01));
-    //background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    
+    background: linear-gradient(-90deg, rgba(255,255,255,.2), rgba(255,255,255,0.01));
+  
     .social_icon{
   
       width: auto;
@@ -68,10 +69,7 @@
       fill: white;
       padding: .5rem;
       margin: .5rem;
-      //background: linear-gradient(320deg, #096d00, #e5ff00);
-      //box-shadow: 5px 10px rgba(0,0,0,.3);
-      border: .2rem solid white;
-    
+      border: .2rem solid white;  
       border-radius: .8rem;
       background-size: 200% 200%;      
     }
@@ -83,6 +81,85 @@
     }
   }
 }
+
+.projects_section_wrapper{
+
+  .projects_header{
+      text-align: center;
+      margin: auto;
+
+    h4{ 
+      font-weight: bolder;
+      span{
+        padding: .5rem;
+        background: rgba(255,255,255,.2);
+        border-radius: .5rem;
+      }
+    }
+  }
+
+  .projects_wrapper{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+
+    .project_wrapper{
+
+      /* Larger than mobile */
+      @media (min-width: 400px) {
+      
+      }
+      /* Larger than phablet (also point when grid becomes active) */
+      @media (min-width: 550px) {
+      
+      }
+
+      margin: .5rem;
+      padding: .5rem;
+      background: rgba(255,255,255,.2);
+      border-radius: .5rem;
+
+      h5{
+        text-align: center;
+        margin-bottom: .5rem;
+        span{
+          padding: .5rem;
+          border-radius: .5rem;
+        }
+      }
+      
+      .image_bounds{
+
+        margin: auto;
+        background: none;
+        width: 300px;
+
+        .project_thumbnail{
+          height: auto;
+          width: auto;
+          margin: auto;
+        }
+      }
+
+      button{
+        margin: .2rem;
+        outline: none;
+        background: none;
+        padding: .5rem;
+        border: .2rem solid white;
+      
+        strong{
+          color: white;
+          
+        }
+      }
+    }
+  }
+}
+
+
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
