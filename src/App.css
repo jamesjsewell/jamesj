@@ -57,28 +57,60 @@ html {
     .social_icons_wrapper .social_icons .social_icon {
       height: 3rem; } }
 
-.projects_section_wrapper .projects_header {
-  text-align: center;
+.about_section_wrapper {
   margin: auto; }
+  .about_section_wrapper .about_section .bio_wrapper {
+    border-radius: .5rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem; }
+    .about_section_wrapper .about_section .bio_wrapper p {
+      margin: auto; }
+    .about_section_wrapper .about_section .bio_wrapper .bio_header {
+      text-align: center; }
+      .about_section_wrapper .about_section .bio_wrapper .bio_header h5 {
+        margin: 1rem; }
+  .about_section_wrapper .about_section .skills_wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: .5rem;
+    padding: 1rem; }
+    .about_section_wrapper .about_section .skills_wrapper .skills_header {
+      text-align: center; }
+      .about_section_wrapper .about_section .skills_wrapper .skills_header h5 {
+        margin: 1rem; }
+    .about_section_wrapper .about_section .skills_wrapper .skills {
+      padding: .5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: auto; }
+      .about_section_wrapper .about_section .skills_wrapper .skills .skill {
+        width: 5rem;
+        height: 5rem; }
+
+.projects_section_wrapper .projects_header {
+  text-align: center; }
   .projects_section_wrapper .projects_header h4 {
+    color: white;
     font-weight: bolder; }
     .projects_section_wrapper .projects_header h4 span {
       padding: .5rem;
-      background: rgba(255, 255, 255, 0.2);
       border-radius: .5rem; }
 
 .projects_section_wrapper .projects_wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: auto; }
+  align-items: flex-start;
+  margin: auto;
+  flex-grow: none; }
   .projects_section_wrapper .projects_wrapper .project_wrapper {
     /* Larger than mobile */
     /* Larger than phablet (also point when grid becomes active) */
     margin: .5rem;
     padding: .5rem;
     background: rgba(255, 255, 255, 0.2);
-    border-radius: .5rem; }
+    border-radius: .5rem;
+    position: relative; }
     .projects_section_wrapper .projects_wrapper .project_wrapper h5 {
       text-align: center;
       margin-bottom: .5rem; }
@@ -88,19 +120,24 @@ html {
     .projects_section_wrapper .projects_wrapper .project_wrapper .image_bounds {
       margin: auto;
       background: none;
-      width: 300px; }
+      width: 100%; }
       .projects_section_wrapper .projects_wrapper .project_wrapper .image_bounds .project_thumbnail {
         height: auto;
-        width: auto;
-        margin: auto; }
+        width: 300px;
+        max-width: 100%; }
     .projects_section_wrapper .projects_wrapper .project_wrapper button {
-      margin: .2rem;
+      margin: auto;
       outline: none;
       background: none;
       padding: .5rem;
       border: .2rem solid white; }
       .projects_section_wrapper .projects_wrapper .project_wrapper button strong {
         color: white; }
+    .projects_section_wrapper .projects_wrapper .project_wrapper a {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: white; }
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {

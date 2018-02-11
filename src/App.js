@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
-import refugeeRequests from './images/refugee-requests.png'
-import gameTalley from './images/gametally.png'
-import weather from './images/weather.png'
-
 import './App.css';
+import refugeeRequests from './images/refugee-requests.png'
+import snake from './images/snake.png'
+import weather from './images/weather.png'
+import gameTally from './images/gametally.png'
+
+import backbone from './images/skills/backbone.svg'
+import css from './images/skills/css.svg'
+import git from './images/skills/git.svg'
+import github from './images/skills/github.svg'
+import html from './images/skills/html.svg'
+import jquery from './images/skills/jquery.svg'
+import js from './images/skills/js.svg'
+import lightroom from './images/skills/lightroom.svg'
+import mongodb from './images/skills/mongodb.png'
+import node from './images/skills/node.svg'
+import photoshop from './images/skills/photoshop.svg'
+import premier from './images/skills/premier.svg'
+import react from './images/skills/react.svg'
+import terminal from './images/skills/terminal.svg'
+import trello from './images/skills/trello.svg'
+//illustrator, blender
+var skillsArray = [js, html, css, jquery, backbone, react, node, mongodb, terminal, git, github, photoshop ]
 
 class App extends Component {
   render() {
@@ -57,20 +75,72 @@ class App extends Component {
           </div>
 
         </div>
+
         <br/>
-        <div className="projects_section_wrapper row">
+
+        <div className="about_section_wrapper container">
+
+          <div className="about_section row">
+            
+            <div className="bio_wrapper six columns">
+              <div className="bio_header"><h5>About James</h5></div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            
+            <div className="skills_wrapper six columns">
+              <div className="skills_header"><h5>Skills</h5></div>
+              <div className="skills">
+
+                { skillsArray.map( skill => { return <img className="skill" src={skill} /> } )  }
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <br/>
+        <div className="projects_section_wrapper row container">
           <div className="projects_header"><h4><span>Webapp Projects</span></h4></div>
 
           <div className="projects_wrapper twelve columns">
               <div className="project_wrapper">
-                <h5><span>refugee requests</span></h5>
+                <h5><span>Refugee Requests</span></h5>
                 <div className="image_bounds">
                   <img className="u-max-full-width project_thumbnail" src={refugeeRequests} />
                 </div>
                 <button type="button"><strong className="u-max-full-width">more</strong></button>
+                
               </div>
+
+              <div className="project_wrapper">
+                <h5><span>Snake Remake</span></h5>
+                <div className="image_bounds">
+                  <img className="project_thumbnail" src={snake} />
+                </div>
+                <button type="button"><strong className="u-max-full-width">more</strong></button>
+              </div>
+
+              <div className="project_wrapper">
+                <h5><span>Wthr</span></h5>
+                <div className="image_bounds">
+                  <img className="u-max-full-width project_thumbnail" src={weather} />
+                </div>
+                <button type="button"><strong className="u-max-full-width">more</strong></button>
+              </div>
+
+              <div className="project_wrapper">
+                <h5><span>Game Tally</span></h5>
+                <div className="image_bounds">
+                  <img className="u-max-full-width project_thumbnail" src={gameTally} />
+                </div>
+                <button type="button"><strong className="u-max-full-width">more</strong></button>
+              </div>
+
           </div>
+
         </div>
+        <br/>
+        
 
       </div>
     );
