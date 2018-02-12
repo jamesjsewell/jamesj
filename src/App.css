@@ -68,17 +68,23 @@ html {
     .about_section_wrapper .about_section .bio_wrapper p {
       margin: auto; }
     .about_section_wrapper .about_section .bio_wrapper .bio_header {
-      text-align: center; }
+      text-align: left; }
       .about_section_wrapper .about_section .bio_wrapper .bio_header h5 {
         margin: 1rem; }
   .about_section_wrapper .about_section .skills_wrapper {
     border-radius: .5rem;
     padding: 1rem; }
     .about_section_wrapper .about_section .skills_wrapper .skills_header {
-      text-align: center; }
+      text-align: left; }
       .about_section_wrapper .about_section .skills_wrapper .skills_header h5 {
         margin: 1rem; }
+        .about_section_wrapper .about_section .skills_wrapper .skills_header h5 span {
+          background: rgba(255, 255, 255, 0.2);
+          padding: .5rem;
+          border-radius: .5rem; }
     .about_section_wrapper .about_section .skills_wrapper .skills {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: .5rem;
       padding: .5rem;
       display: flex;
       flex-wrap: wrap;

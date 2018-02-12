@@ -98,7 +98,7 @@ html{
 
       }
       .bio_header{
-        text-align: center;
+        text-align: left;
         h5{
           margin: 1rem;
         }
@@ -110,13 +110,21 @@ html{
       padding: 1rem;
 
       .skills_header{
-        text-align: center;
+        text-align: left;
         h5{
           margin: 1rem;
+          span{
+            background: rgba(255,255,255,.2);
+            padding: .5rem;
+            border-radius: .5rem;
+          }
+        
         }
       }
     
       .skills{
+        background: rgba(255,255,255,.2);
+        border-radius: .5rem;
         padding: .5rem;
         display: flex;
         flex-wrap: wrap;

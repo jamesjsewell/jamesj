@@ -90,7 +90,7 @@ class App extends Component {
             </div>
         
             <div className="skills_wrapper six columns">
-              <div className="skills_header"><h5>Skills</h5></div>
+              <div className="skills_header"><h5><span>Skills</span></h5></div>
               <div className="skills">
 
                 { skillsArray.map( skill => { return <img className="skill" src={skill} /> } )  }
