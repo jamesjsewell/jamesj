@@ -83,6 +83,8 @@ html{
 }
 
 .about_section_wrapper{
+  background: rgba(255,255,255,.2);
+  border-radius: .5rem;
   margin: auto;
   .about_section{
     .bio_wrapper{
@@ -104,7 +106,6 @@ html{
     }
     .skills_wrapper{
       
-      background: rgba(255,255,255,.2);
       border-radius: .5rem;
       padding: 1rem;
 
@@ -141,14 +142,14 @@ html{
       font-weight: bolder;
       span{
         padding: .5rem;
-        //background: rgba(255,255,255,.2);
         border-radius: .5rem;
       }
     }
   }
 
   .projects_wrapper{
-
+    background: rgba(255,255,255,.2);
+    border-radius: .5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

@@ -58,6 +58,8 @@ html {
       height: 3rem; } }
 
 .about_section_wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: .5rem;
   margin: auto; }
   .about_section_wrapper .about_section .bio_wrapper {
     border-radius: .5rem;
@@ -70,7 +72,6 @@ html {
       .about_section_wrapper .about_section .bio_wrapper .bio_header h5 {
         margin: 1rem; }
   .about_section_wrapper .about_section .skills_wrapper {
-    background: rgba(255, 255, 255, 0.2);
     border-radius: .5rem;
     padding: 1rem; }
     .about_section_wrapper .about_section .skills_wrapper .skills_header {
@@ -97,6 +98,8 @@ html {
       border-radius: .5rem; }
 
 .projects_section_wrapper .projects_wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: .5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

@@ -10,6 +10,7 @@ import css from './images/skills/css.svg'
 import git from './images/skills/git.svg'
 import github from './images/skills/github.svg'
 import html from './images/skills/html.svg'
+import illustrator from './images/skills/illustrator.svg'
 import jquery from './images/skills/jquery.svg'
 import js from './images/skills/js.svg'
 import lightroom from './images/skills/lightroom.svg'
@@ -20,8 +21,9 @@ import premier from './images/skills/premier.svg'
 import react from './images/skills/react.svg'
 import terminal from './images/skills/terminal.svg'
 import trello from './images/skills/trello.svg'
+
 //illustrator, blender
-var skillsArray = [js, html, css, jquery, backbone, react, node, mongodb, terminal, git, github, photoshop ]
+var skillsArray = [js, html, css, jquery, backbone, react, node, mongodb, terminal, git, github, photoshop, illustrator ]
 
 class App extends Component {
   render() {
@@ -86,7 +88,7 @@ class App extends Component {
               <div className="bio_header"><h5>About James</h5></div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-            
+        
             <div className="skills_wrapper six columns">
               <div className="skills_header"><h5>Skills</h5></div>
               <div className="skills">
