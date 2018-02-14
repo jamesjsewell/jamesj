@@ -78,8 +78,6 @@ class App extends Component {
 
         </div>
 
-        <br />
-
         <div className="about_section_wrapper container">
 
           <div className="about_section row">
@@ -100,7 +98,7 @@ class App extends Component {
           </div>
 
         </div>
-        <br />
+      
         <div className="projects_section_wrapper row container">
           <div className="projects_header"><h4><span>Webapp Projects</span></h4></div>
 
@@ -141,7 +139,11 @@ class App extends Component {
           </div>
 
         </div>
-        <br />
+        <div className="footer_wrapper container">
+          <div className="footer">
+            <strong>this website was written by James Sewell utilizing Reactjs and Skeleton CSS boilerplate. Source code for this website can be hound <a>here</a></strong>
+          </div>
+        </div>
 
 
       </div>
