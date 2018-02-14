@@ -83,10 +83,12 @@ html{
 }
 
 .about_section_wrapper{
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,.1);
   background: rgba(255,255,255,.2);
   border-radius: .5rem;
   margin: auto;
   .about_section{
+    
     .bio_wrapper{
       
       border-radius: .5rem;
@@ -100,19 +102,18 @@ html{
       .bio_header{
         text-align: left;
         h5{
-          margin: 1rem;
+          margin-bottom: 1rem;
         }
       }
     }
     .skills_wrapper{
-      
       border-radius: .5rem;
       padding: 1rem;
 
       .skills_header{
         text-align: left;
         h5{
-          margin: 1rem;
+          margin-bottom: 1rem;
           span{
             background: rgba(255,255,255,.2);
             padding: .5rem;
@@ -141,13 +142,15 @@ html{
 }
 
 .projects_section_wrapper{
-  
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,.1);
+  border-radius: .5rem;
   .projects_header{
       text-align: center;
 
     h4{ 
       color: white;
       font-weight: bolder;
+      margin: 1.5rem;
       span{
         padding: .5rem;
         border-radius: .5rem;
@@ -164,20 +167,14 @@ html{
     align-items: flex-start;
     margin: auto;
     flex-grow: none;
+    padding: .5rem;
 
     .project_wrapper{
 
-      /* Larger than mobile */
-      @media (min-width: 400px) {
       
-      }
-      /* Larger than phablet (also point when grid becomes active) */
-      @media (min-width: 550px) {
-      
-      }
 
       margin: .5rem;
-      padding: .5rem;
+      padding: 1rem;
       background: rgba(255,255,255,.2);
       border-radius: .5rem;
       position: relative;
@@ -193,14 +190,37 @@ html{
       
       .image_bounds{
 
-        margin: auto;
+       
         background: none;
         width: 100%;
 
         .project_thumbnail{
+          text-align: center;
           height: auto;
-          width: 300px;
+          width: 90%;
           max-width: 100%;
+          margin: auto;
+
+          /* Larger than mobile */
+          @media (min-width: 400px) {
+            
+              //width: 90%;
+            
+          }
+          /* Larger than phablet (also point when grid becomes active) */
+          @media (min-width: 550px) {
+           
+              width: 250px;
+            
+          }
+
+          /* Larger than tablet */
+          @media (min-width: 750px) {
+           
+              width: 250px;
+            
+
+          }
         }
       }
 
