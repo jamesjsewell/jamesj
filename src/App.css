@@ -168,11 +168,15 @@ html {
 
 .footer_wrapper {
   background: rgba(255, 255, 255, 0.2);
-  border-radius: .5rem; }
+  border-radius: .5rem;
+  padding: 1rem; }
   .footer_wrapper .footer {
+    margin: auto;
+    background: rgba(255, 255, 255, 0.2);
     width: 60%;
     margin: auto;
-    padding: .5rem; }
+    padding: 1rem;
+    border-radius: .5rem; }
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
@@ -196,9 +200,9 @@ there.
 /* Larger than desktop */
 /* Larger than Desktop HD */
 .pulsing_anim {
-  -webkit-animation: AnimationName 5s ease infinite;
-  -moz-animation: AnimationName 5s ease infinite;
-  animation: AnimationName 5s ease infinite; }
+  -webkit-animation: AnimationName 5s linear infinite;
+  -moz-animation: AnimationName 5s linear infinite;
+  animation: AnimationName 5s linear infinite; }
 
 @-webkit-keyframes AnimationName {
   0% {

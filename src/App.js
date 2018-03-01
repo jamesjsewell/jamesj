@@ -24,11 +24,46 @@ import trello from './images/skills/trello.svg'
 
 //blender
 var skillsArray = [js, html, css, jquery, backbone, react, node, mongodb, terminal, git, github, photoshop, illustrator]
-
 class App extends Component {
+
+  constructor(props){
+    super(props)
+    this.state =
+    {
+      currentModal: null
+    } 
+  }
+
+  projectSeeMore(project){
+
+    var projComponent = {}
+    switch(project) {
+      case 'refugeeRequests':
+        console.log('wtf')
+        projComponent = <Modal title="refugee requests" description="sdafdasd" image={refugeeRequests} />
+        break;
+      case 'snake':
+        projComponent = <Modal title="hungry snake" description="sdafdasd" image={snake} />  
+        break;
+      case 'wthr':
+        projComponent = <Modal title="wthr" description="sdafdasd" image={weather} />
+        break;
+      case 'gameTally':
+      projComponent = <Modal title="game tally" description="sdafdasd" image={gameTally} />
+        break;
+      //default:
+         
+    }
+
+    this.setState({currentModal: projComponent })
+
+  }
+
   render() {
     return (
       <div className="App pulsing_anim">
+
+        {this.state.currentModal? this.state.currentModal : null}
         <header className="hero_wrapper u-max-full-width">
 
           <div className="hero_contents" >
@@ -78,7 +113,7 @@ class App extends Component {
 
         </div>
 
-        <div className="about_section_wrapper container">
+        <div className="about_section_wrapper container pulsing_anim">
 
           <div className="about_section row">
 
@@ -108,7 +143,7 @@ class App extends Component {
               <div className="image_bounds">
                 <img className="u-max-full-width project_thumbnail" src={refugeeRequests} />
               </div>
-              <button type="button"><strong className="u-max-full-width">more</strong></button>
+              <button onClick={()=>{this.projectSeeMore('refugeeRequests')}} type="button"><strong className="u-max-full-width">more</strong></button>
 
             </div>
 
@@ -117,7 +152,7 @@ class App extends Component {
               <div className="image_bounds">
                 <img className="project_thumbnail" src={snake} />
               </div>
-              <button type="button"><strong className="u-max-full-width">more</strong></button>
+              <button onClick={()=>{this.projectSeeMore('snake')}} type="button"><strong className="u-max-full-width">more</strong></button>
             </div>
 
             <div className="project_wrapper">
@@ -125,7 +160,7 @@ class App extends Component {
               <div className="image_bounds">
                 <img className="u-max-full-width project_thumbnail" src={weather} />
               </div>
-              <button type="button"><strong className="u-max-full-width">more</strong></button>
+              <button onClick={()=>{this.projectSeeMore('wthr')}} type="button"><strong className="u-max-full-width">more</strong></button>
             </div>
 
             <div className="project_wrapper">
@@ -133,7 +168,7 @@ class App extends Component {
               <div className="image_bounds">
                 <img className="u-max-full-width project_thumbnail" src={gameTally} />
               </div>
-              <button type="button"><strong className="u-max-full-width">more</strong></button>
+              <button onClick={()=>{this.projectSeeMore('gameTally')}} type="button"><strong className="u-max-full-width">more</strong></button>
             </div>
 
           </div>
@@ -152,3 +187,35 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
+class Modal extends Component{
+
+  constructor(props){
+    super(props)
+  }
+  
+  render(){
+    var {title, description, image} = this.props
+    return ( 
+    <div className="modal_wrapper">
+        
+        <div className="modal_content container">
+
+          <div><h5>{title}</h5></div>
+          <div className="row">
+            <div className="eight columns modal_image">
+              <img className="u-max-full-width" src={image} />
+            </div>
+
+            <div className="four columns modal_text">
+              <p>{description}</p>
+            </div>
+          </div>
+        </div>
+        
+    </div> )
+  }
+}
