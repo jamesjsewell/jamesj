@@ -64,6 +64,7 @@ class App extends Component {
       <div className="App pulsing_anim">
 
         {this.state.currentModal? this.state.currentModal : null}
+
         <header className="hero_wrapper u-max-full-width">
 
           <div className="hero_contents" >
@@ -180,7 +181,7 @@ class App extends Component {
           </div>
         </div>
 
-
+      
       </div>
     );
   }
@@ -202,16 +203,17 @@ class Modal extends Component{
     return ( 
     <div className="modal_wrapper">
         
-        <div className="modal_content container">
+        <div className="modal_content">
+          <div className="container">
+            <div className="modal_header"><h5>{title}</h5></div>
+            <div className="row">
+              <div className="eight columns modal_image">
+                <img className="u-max-full-width" src={image} />
+              </div>
 
-          <div><h5>{title}</h5></div>
-          <div className="row">
-            <div className="eight columns modal_image">
-              <img className="u-max-full-width" src={image} />
-            </div>
-
-            <div className="four columns modal_text">
-              <p>{description}</p>
+              <div className="four columns modal_text">
+                <p>{description}</p>
+              </div>
             </div>
           </div>
         </div>
