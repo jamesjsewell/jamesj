@@ -271,7 +271,8 @@ html{
   background-color: rgba(0,0,0,.7);
 
   .modal_content{
-    width: 80vw;
+    transition: width 1s;
+    width: 100%;
     height: auto;
     position: absolute;
     top: 50%;
@@ -283,9 +284,16 @@ html{
     border-radius: .5rem;
     padding: 2rem;
 
+    .close{
+      color: white;
+      float: right;
+      
+    }
+
     .modal_header{
-      background: rgba(255,255,255,.2);
+      //background: rgba(255,255,255,.2);
       border-radius: .5rem;
+      color: white;
     }
 
     .modal_image{
@@ -299,8 +307,18 @@ html{
       padding: .5rem;
       border-radius: .5rem;
     }
+
+    animation: fadein 1s;
+  
+  
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
   }
 }
+
+
 
 
 

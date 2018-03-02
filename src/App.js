@@ -40,16 +40,16 @@ class App extends Component {
     switch(project) {
       case 'refugeeRequests':
         console.log('wtf')
-        projComponent = <Modal title="refugee requests" description="sdafdasd" image={refugeeRequests} />
+        projComponent = <Modal title="refugee requests" description="sdafdasd" image={refugeeRequests} close={()=>{this.setState({currentModal: null})}} />
         break;
       case 'snake':
-        projComponent = <Modal title="hungry snake" description="sdafdasd" image={snake} />  
+        projComponent = <Modal title="hungry snake" description="sdafdasd" image={snake} close={()=>{this.setState({currentModal: null})}} />  
         break;
       case 'wthr':
-        projComponent = <Modal title="wthr" description="sdafdasd" image={weather} />
+        projComponent = <Modal title="wthr" description="sdafdasd" image={weather} close={()=>{this.setState({currentModal: null})}} />
         break;
       case 'gameTally':
-      projComponent = <Modal title="game tally" description="sdafdasd" image={gameTally} />
+        projComponent = <Modal title="game tally" description="sdafdasd" image={gameTally} close={()=>{this.setState({currentModal: null})}} />
         break;
       //default:
          
@@ -199,24 +199,25 @@ class Modal extends Component{
   }
   
   render(){
-    var {title, description, image} = this.props
+    var {title, description, image, close} = this.props
     return ( 
     <div className="modal_wrapper">
         
-        <div className="modal_content">
-          <div className="container">
-            <div className="modal_header"><h5>{title}</h5></div>
-            <div className="row">
-              <div className="eight columns modal_image">
-                <img className="u-max-full-width" src={image} />
-              </div>
+      <div className="modal_content">
+        <div className="container">
+          <button className="close" onClick={()=>{close()}}>close</button>
+          <div className="modal_header"><h5>{title}</h5></div>
+          <div className="row">
+            <div className="eight columns modal_image">
+              <img className="u-max-full-width" src={image} />
+            </div>
 
-              <div className="four columns modal_text">
-                <p>{description}</p>
-              </div>
+            <div className="four columns modal_text">
+              <p>{description}</p>
             </div>
           </div>
         </div>
+      </div>
         
     </div> )
   }

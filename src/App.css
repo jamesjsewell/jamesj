@@ -185,7 +185,8 @@ html {
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.7); }
   .modal_wrapper .modal_content {
-    width: 80vw;
+    transition: width 1s;
+    width: 100%;
     height: auto;
     position: absolute;
     top: 50%;
@@ -195,10 +196,14 @@ html {
     background-size: 400% 400%;
     background-attachment: fixed;
     border-radius: .5rem;
-    padding: 2rem; }
+    padding: 2rem;
+    animation: fadein 1s; }
+    .modal_wrapper .modal_content .close {
+      color: white;
+      float: right; }
     .modal_wrapper .modal_content .modal_header {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: .5rem; }
+      border-radius: .5rem;
+      color: white; }
     .modal_wrapper .modal_content .modal_image {
       padding: .5rem;
       background: rgba(255, 255, 255, 0.2);
@@ -207,6 +212,12 @@ html {
       background: rgba(255, 255, 255, 0.2);
       padding: .5rem;
       border-radius: .5rem; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
