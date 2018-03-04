@@ -36,32 +36,39 @@ class App extends Component {
 
   projectSeeMore(project){
 
-    var projComponent = {}
+
+    function close(){
+      this.setState({currentModal: null})
+      document.body.classList.toggle('modal_open', false)
+    }
+
+    var projComponent = null
     switch(project) {
       case 'refugeeRequests':
-        console.log('wtf')
-        projComponent = <Modal title="refugee requests" description="sdafdasd" image={refugeeRequests} close={()=>{this.setState({currentModal: null})}} />
+        projComponent = <Modal title="refugee requests" description="sdafdasd" image={refugeeRequests} close={close.bind(this)} />
         break;
       case 'snake':
-        projComponent = <Modal title="hungry snake" description="sdafdasd" image={snake} close={()=>{this.setState({currentModal: null})}} />  
+        projComponent = <Modal title="hungry snake" description="sdafdasd" image={snake} close={close.bind(this)} />  
         break;
       case 'wthr':
-        projComponent = <Modal title="wthr" description="sdafdasd" image={weather} close={()=>{this.setState({currentModal: null})}} />
+        projComponent = <Modal title="wthr" description="sdafdasd" image={weather} close={close.bind(this)} />
         break;
       case 'gameTally':
-        projComponent = <Modal title="game tally" description="sdafdasd" image={gameTally} close={()=>{this.setState({currentModal: null})}} />
+        projComponent = <Modal title="game tally" description="sdafdasd" image={gameTally} close={close.bind(this)} />
         break;
-      //default:
          
     }
 
-    this.setState({currentModal: projComponent })
+    if(projComponent){
+      document.body.classList.toggle('modal_open', true)
+      this.setState({currentModal: projComponent })
+    }
 
   }
 
   render() {
     return (
-      <div className={this.state.currentModal? "App modal_open" : "App pulsing_anim"}>
+      <div className={this.state.currentModal? "App pulsing_anim" : "App pulsing_anim"}>
 
         {this.state.currentModal? this.state.currentModal : null}
 

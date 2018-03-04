@@ -8,8 +8,7 @@ html {
   background-attachment: fixed; }
 
 .modal_open {
-  overflow: hidden;
-  position: fixed; }
+  overflow: hidden; }
 
 .hero_wrapper {
   width: 100vw;
@@ -137,7 +136,8 @@ html {
       padding: 1rem;
       background: rgba(255, 255, 255, 0.2);
       border-radius: .5rem;
-      position: relative; }
+      position: relative;
+      text-align: right; }
       .projects_section_wrapper .projects_wrapper .project_wrapper h5 {
         text-align: center;
         margin-bottom: .5rem; }
@@ -166,8 +166,7 @@ html {
         margin: auto;
         outline: none;
         background: none;
-        padding: .5rem;
-        border: .2rem solid white; }
+        padding: .5rem; }
         .projects_section_wrapper .projects_wrapper .project_wrapper button strong {
           color: white; }
       .projects_section_wrapper .projects_wrapper .project_wrapper a {

@@ -11,7 +11,7 @@ html{
 
 .modal_open {
   overflow: hidden;
-  position: fixed;
+  
 }
 
 .hero_wrapper{
@@ -239,12 +239,14 @@ html{
         }
       }
 
+      text-align: right;
+
       button{
         margin: auto;
         outline: none;
         background: none;
         padding: .5rem;
-        border: .2rem solid white;
+        //border: .2rem solid white;
       
         strong{
           color: white;
