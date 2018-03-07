@@ -34,7 +34,7 @@ class App extends Component {
     } 
   }
 
-  projectSeeMore(project){
+  projectSeeMore(title, description, video){
 
 
     function close(){
@@ -43,27 +43,35 @@ class App extends Component {
     }
 
     var projComponent = null
-    switch(project) {
-      case 'refugeeRequests':
-        projComponent = <Modal title="refugee requests" description="sdafdasd" image={refugeeRequests} close={close.bind(this)} />
-        break;
-      case 'snake':
-        projComponent = <Modal title="hungry snake" description="sdafdasd" image={snake} close={close.bind(this)} />  
-        break;
-      case 'wthr':
-        projComponent = <Modal title="wthr" description="sdafdasd" image={weather} close={close.bind(this)} />
-        break;
-      case 'gameTally':
-        projComponent = <Modal title="game tally" description="sdafdasd" image={gameTally} close={close.bind(this)} />
-        break;
-         
-    }
+    
+    projComponent = <Modal title={title} description={description} video={video} close={close.bind(this)} />
+
 
     if(projComponent){
       document.body.classList.toggle('modal_open', true)
       this.setState({currentModal: projComponent })
     }
 
+  }
+
+  renderProjects(){
+
+    var projects = {
+      refugeeRequests: {title:"Inventory Management Prototype", name: "refugeeRequests", description: "asdfsadf", video: "https://www.youtube.com/embed/eOykScleL08?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1"},
+      sifter: {title:"Unearthed Hackathon Submission", name: "sifter", description: "dfadsfa", video: "https://www.youtube.com/embed/4KPtIy6wtsM?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1"},
+      snakeRemake: {title: "Remake of Snake", name:"snake", description: "fasdfasdf", video: "https://www.youtube.com/embed/muzEI9s64Xs?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" },
+      spaceApps: {title:"Space Apps Challenge Submission", description: "adfsdfadf", name: "refugeeRequests", video: "https://www.youtube.com/embed/wZ2Xs0BpLXw?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" },
+      weather: {title:"Weather App Project", name: "weather", description: "adfsdd", video: "https://www.youtube.com/embed/WngJ6D0-NUo?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1"}
+
+    }
+    var projectsArray = []
+    for(var i in projects){
+      var project = projects[i]
+      projectsArray.push(<Project seeMore={this.projectSeeMore.bind(this)} projectName={project.name} title={project.title} description={project.description} video={project.video} />)
+    }
+
+    return projectsArray
+   
   }
 
   render() {
@@ -145,48 +153,16 @@ class App extends Component {
         </div>
       
         <div className="projects_section_wrapper row container">
-          <div className="projects_header"><h4><span>Webapp Projects</span></h4></div>
+          <div className="projects_header"><h5><span>Webapp Projects</span></h5></div>
 
           <div className="projects_wrapper twelve columns">
-            <div className="project_wrapper">
-              <h5><span>Refugee Requests</span></h5>
-              <div className="image_bounds">
-                <img className="u-max-full-width project_thumbnail" src={refugeeRequests} />
-              </div>
-              <button onClick={()=>{this.projectSeeMore('refugeeRequests')}} type="button"><strong className="u-max-full-width">more</strong></button>
-
-            </div>
-
-            <div className="project_wrapper">
-              <h5><span>Snake Remake</span></h5>
-              <div className="image_bounds">
-                <img className="project_thumbnail" src={snake} />
-              </div>
-              <button onClick={()=>{this.projectSeeMore('snake')}} type="button"><strong className="u-max-full-width">more</strong></button>
-            </div>
-
-            <div className="project_wrapper">
-              <h5><span>Wthr</span></h5>
-              <div className="image_bounds">
-                <img className="u-max-full-width project_thumbnail" src={weather} />
-              </div>
-              <button onClick={()=>{this.projectSeeMore('wthr')}} type="button"><strong className="u-max-full-width">more</strong></button>
-            </div>
-
-            <div className="project_wrapper">
-              <h5><span>Game Tally</span></h5>
-              <div className="image_bounds">
-                <img className="u-max-full-width project_thumbnail" src={gameTally} />
-              </div>
-              <button onClick={()=>{this.projectSeeMore('gameTally')}} type="button"><strong className="u-max-full-width">more</strong></button>
-            </div>
-
+            {this.renderProjects()}
           </div>
 
         </div>
         <div className="footer_wrapper container">
           <div className="footer">
-            <strong>this website was written by James Sewell utilizing Reactjs and Skeleton CSS boilerplate. Source code for this website can be hound <a>here</a></strong>
+            <strong>this website was written by James Sewell utilizing Reactjs and Skeleton CSS boilerplate. Source code for this website can be hound <a href="https://github.com/jamesjsewell/jamesj">here</a></strong>
           </div>
         </div>
 
@@ -200,6 +176,25 @@ export default App;
 
 
 
+class Project extends Component{
+
+  constructor(props){
+    super(props)
+  }
+  
+  render(){
+    var {seeMore, projectName, title, description, video} = this.props
+    return (
+      <div className="project_wrapper">
+        <p>{title}</p>
+        <div className="image_bounds">
+          <iframe className="u-max-full-width project_thumbnail" width="560" height="315" src={video} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <button onClick={()=>{seeMore(title, description, video)}} type="button"><strong className="u-max-full-width">more</strong></button>
+      </div>
+    )
+  }
+}
 
 class Modal extends Component{
 
@@ -208,17 +203,17 @@ class Modal extends Component{
   }
   
   render(){
-    var {title, description, image, close} = this.props
+    var {title, description, video, close} = this.props
     return ( 
     <div className="modal_wrapper">
         
-      <div className="modal_content">
+      <div className="modal_content pulsing_anim">
         <div className="container">
           <button className="close" onClick={()=>{close()}}>close</button>
           <div className="modal_header"><h5>{title}</h5></div>
           <div className="row">
             <div className="eight columns modal_image">
-              <img className="u-max-full-width" src={image} />
+              <iframe className="u-max-full-width" width="560" height="315" src={video} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
 
             <div className="four columns modal_text">

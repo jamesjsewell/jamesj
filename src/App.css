@@ -69,7 +69,7 @@ html {
         max-height: 80%; }
 
 .about_section_wrapper {
-  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.08), inset 0 0 3rem rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.2);
   border-radius: .5rem;
   margin: auto;
@@ -82,19 +82,15 @@ html {
       margin: auto; }
     .about_section_wrapper .about_section .bio_wrapper .bio_header {
       text-align: left; }
-      .about_section_wrapper .about_section .bio_wrapper .bio_header h5 {
-        margin-bottom: 1rem; }
   .about_section_wrapper .about_section .skills_wrapper {
     border-radius: .5rem;
     padding: 1rem; }
     .about_section_wrapper .about_section .skills_wrapper .skills_header {
       text-align: left; }
-      .about_section_wrapper .about_section .skills_wrapper .skills_header h5 {
-        margin-bottom: 1rem; }
-        .about_section_wrapper .about_section .skills_wrapper .skills_header h5 span {
-          background: rgba(255, 255, 255, 0.2);
-          padding: .5rem;
-          border-radius: .5rem; }
+      .about_section_wrapper .about_section .skills_wrapper .skills_header h5 span {
+        background: rgba(255, 255, 255, 0.2);
+        padding: .5rem;
+        border-radius: .5rem; }
     .about_section_wrapper .about_section .skills_wrapper .skills {
       background: rgba(255, 255, 255, 0.2);
       border-radius: .5rem;
@@ -109,20 +105,13 @@ html {
 
 .projects_section_wrapper {
   margin-bottom: 2rem;
-  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.08), inset 0 0 3rem rgba(255, 255, 255, 0.4);
   border-radius: .5rem;
-  border: 0.2rem solid rgba(255, 255, 255, 0.2); }
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem; }
   .projects_section_wrapper .projects_header {
     text-align: center; }
-    .projects_section_wrapper .projects_header h4 {
-      color: white;
-      font-weight: bolder;
-      margin: 1.5rem; }
-      .projects_section_wrapper .projects_header h4 span {
-        padding: .5rem;
-        border-radius: .5rem; }
   .projects_section_wrapper .projects_wrapper {
-    background: rgba(255, 255, 255, 0.2);
     border-radius: .5rem;
     display: flex;
     flex-wrap: wrap;
@@ -137,12 +126,11 @@ html {
       background: rgba(255, 255, 255, 0.2);
       border-radius: .5rem;
       position: relative;
-      text-align: right; }
-      .projects_section_wrapper .projects_wrapper .project_wrapper h5 {
+      text-align: center; }
+      .projects_section_wrapper .projects_wrapper .project_wrapper p {
         text-align: center;
-        margin-bottom: .5rem; }
-        .projects_section_wrapper .projects_wrapper .project_wrapper h5 span {
-          padding: .5rem;
+        margin-bottom: 1rem; }
+        .projects_section_wrapper .projects_wrapper .project_wrapper p span {
           border-radius: .5rem; }
       .projects_section_wrapper .projects_wrapper .project_wrapper .image_bounds {
         background: none;
@@ -186,6 +174,8 @@ html {
     margin: auto;
     padding: 1rem;
     border-radius: .5rem; }
+    .footer_wrapper .footer a {
+      color: white; }
 
 .modal_wrapper {
   position: fixed;
@@ -200,10 +190,11 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(320deg, #312466, #246641);
-    background-size: 400% 400%;
     border-radius: .5rem;
     padding: 2rem;
+    background: linear-gradient(320deg, #312466, #246641);
+    background-size: 400% 400%;
+    background-attachment: fixed;
     animation: fadein 1s; }
     .modal_wrapper .modal_content .close {
       color: white;
@@ -248,25 +239,7 @@ there.
 /* Larger than desktop */
 /* Larger than Desktop HD */
 .pulsing_anim {
-  -webkit-animation: AnimationName 5s linear infinite;
-  -moz-animation: AnimationName 5s linear infinite;
   animation: AnimationName 5s linear infinite; }
-
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 7% 0%; }
-  50% {
-    background-position: 94% 100%; }
-  100% {
-    background-position: 7% 0%; } }
-
-@-moz-keyframes AnimationName {
-  0% {
-    background-position: 7% 0%; }
-  50% {
-    background-position: 94% 100%; }
-  100% {
-    background-position: 7% 0%; } }
 
 @keyframes AnimationName {
   0% {

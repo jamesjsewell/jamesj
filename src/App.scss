@@ -97,7 +97,8 @@ html{
 
 .about_section_wrapper{
   
-  box-shadow: 0px 0px 10px 10px rgba(0,0,0,.08);
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,.08),
+  inset 0 0 3rem rgba(255,255,255,.4);
   background: rgba(255,255,255,.2);
   border-radius: .5rem;
   margin: auto;
@@ -116,9 +117,6 @@ html{
       }
       .bio_header{
         text-align: left;
-        h5{
-          margin-bottom: 1rem;
-        }
       }
     }
     .skills_wrapper{
@@ -128,7 +126,7 @@ html{
       .skills_header{
         text-align: left;
         h5{
-          margin-bottom: 1rem;
+          //margin-bottom: 1rem;
           span{
             background: rgba(255,255,255,.2);
             padding: .5rem;
@@ -158,25 +156,29 @@ html{
 
 .projects_section_wrapper{
   margin-bottom: 2rem;
-  box-shadow: 0px 0px 10px 10px rgba(0,0,0,.08);
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,.08),
+  inset 0 0 3rem rgba(255,255,255,.4);
   border-radius: .5rem;
-  border: .2rem solid rgba(255,255,255,.2);
+  // border: .2rem solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.2);
+  padding: 1rem;
+     
   .projects_header{
       text-align: center;
 
-    h4{ 
-      color: white;
-      font-weight: bolder;
-      margin: 1.5rem;
+    h5{ 
+      //font-weight: bolder;
+      //margin: 1.5rem;
       span{
-        padding: .5rem;
-        border-radius: .5rem;
+        //padding: .5rem;
+        //border-radius: .5rem;
+        //background: rgba(255,255,255,.2);
       }
     }
   }
 
   .projects_wrapper{
-    background: rgba(255,255,255,.2);
+    //background: rgba(255,255,255,.2);
     border-radius: .5rem;
     display: flex;
     flex-wrap: wrap;
@@ -194,11 +196,11 @@ html{
       border-radius: .5rem;
       position: relative;
 
-      h5{
+      p{
         text-align: center;
-        margin-bottom: .5rem;
+        margin-bottom: 1rem;
         span{
-          padding: .5rem;
+          //padding: .5rem;
           border-radius: .5rem;
         }
       }
@@ -239,7 +241,7 @@ html{
         }
       }
 
-      text-align: right;
+      text-align: center;
 
       button{
         margin: auto;
@@ -275,6 +277,9 @@ html{
     margin: auto;  
     padding: 1rem;
     border-radius: .5rem;
+    a{
+      color: white;
+    }
 
   }
 }
@@ -293,10 +298,12 @@ html{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(320deg, #312466, #246641);
-    background-size: 400% 400%;
     border-radius: .5rem;
     padding: 2rem;
+
+    background: linear-gradient(320deg, #312466, #246641);
+    background-size: 400% 400%;
+    background-attachment: fixed;
 
     .close{
       color: white;
@@ -376,20 +383,7 @@ there.
 @media (min-width: 1200px) {}
 
 .pulsing_anim{
-  -webkit-animation: AnimationName 5s linear infinite;
-  -moz-animation: AnimationName 5s linear infinite;
   animation: AnimationName 5s linear infinite;
-
-  @-webkit-keyframes AnimationName {
-      0%{background-position:7% 0%}
-      50%{background-position:94% 100%}
-      100%{background-position:7% 0%}
-  }
-  @-moz-keyframes AnimationName {
-      0%{background-position:7% 0%}
-      50%{background-position:94% 100%}
-      100%{background-position:7% 0%}
-  }
   @keyframes AnimationName { 
       0%{background-position:7% 0%}
       50%{background-position:94% 100%}
