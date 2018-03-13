@@ -332,6 +332,11 @@ html{
       background: rgba(255,255,255,.2);
       padding: .5rem;
       border-radius: .5rem;
+      a{
+        color: white;
+        padding: .5rem;
+        margin: .5rem;
+      }
     }
 
     animation: fadein 1s;

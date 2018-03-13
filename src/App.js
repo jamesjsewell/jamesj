@@ -135,12 +135,18 @@ class App extends Component {
 
           <div className="about_section row">
 
-            <div className="bio_wrapper six columns">
+            <div className="bio_wrapper eight columns">
               <div className="bio_header"><h5>About James</h5></div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>James was a hobbyist developer and wanted a deeper and more practical understanding of web technologies. He
+attended The Iron Yard Houston in the spring of 2017. James was able to learn from his instructors and staff daily.
+In addition to being given in depth instruction, he applied his knowledge daily thanks to assigned exercises and
+projects. He gained experience using version control, even on team projects, and utilizes it frequently. He learned
+to use the terminal, UNIX commands, and bash scripting. He learned foundational concepts all the way up to
+developing his own web applications with cutting edge frameworks. He continues to adopt new technologies and
+develop personal projects.</p>
             </div>
 
-            <div className="skills_wrapper six columns">
+            <div className="skills_wrapper four columns">
               <div className="skills_header"><h5><span>Skills</span></h5></div>
               <div className="skills">
 
@@ -239,7 +245,7 @@ class Modal extends Component{
 
             <div className="four columns modal_text">
               {description? <p>{description}</p> : null}
-              {githubUrl? <a href={githubUrl}>view source on github</a> : null}
+              {githubUrl? <a href={githubUrl}>source</a> : null}
               {homepage? <a href={homepage}>view live</a> : null}
             </div>
           </div>

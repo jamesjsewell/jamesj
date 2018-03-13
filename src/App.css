@@ -211,6 +211,10 @@ html {
       background: rgba(255, 255, 255, 0.2);
       padding: .5rem;
       border-radius: .5rem; }
+      .modal_wrapper .modal_content .modal_text a {
+        color: white;
+        padding: .5rem;
+        margin: .5rem; }
 
 @keyframes fadein {
   from {
