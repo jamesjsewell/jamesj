@@ -184,37 +184,60 @@ html {
   height: 100vh;
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.7);
-  overflow: scroll; }
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-width: 100vw; }
   .modal_wrapper .modal_content {
     width: 100%;
     height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     border-radius: .5rem;
-    padding: 2rem;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 1rem;
+    /* Larger than phablet (also point when grid becomes active) */
     background: grey;
     background-size: 400% 400%;
     background-attachment: fixed;
     animation: fadein 1s; }
-    .modal_wrapper .modal_content .close_modal {
-      color: white;
-      position: absolute;
-      right: 0px;
-      top: 0px; }
+    .modal_wrapper .modal_content .close_modal_wrapper {
+      text-align: right; }
+      .modal_wrapper .modal_content .close_modal_wrapper .close_modal {
+        color: white; }
+    @media (min-width: 550px) {
+      .modal_wrapper .modal_content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); } }
+    .modal_wrapper .modal_content .modal_header {
+      text-align: left; }
+      .modal_wrapper .modal_content .modal_header a {
+        color: white; }
     .modal_wrapper .modal_content .modal_image {
-      padding: .5rem;
+      padding: 1rem;
       background: rgba(255, 255, 255, 0.2);
       border-radius: .5rem; }
     .modal_wrapper .modal_content .modal_text {
+      /* Larger than phablet (also point when grid becomes active) */
+      margin-top: 1rem;
       background: rgba(255, 255, 255, 0.2);
-      padding: .5rem;
+      padding: 1rem;
       border-radius: .5rem; }
-      .modal_wrapper .modal_content .modal_text a {
+      @media (min-width: 550px) {
+        .modal_wrapper .modal_content .modal_text {
+          margin-top: 0; } }
+      .modal_wrapper .modal_content .modal_text .view_source img {
+        border-right: .2rem solid white;
+        width: 6rem;
+        height: 6rem; }
+      .modal_wrapper .modal_content .modal_text .view_live {
+        float: right;
         color: white;
-        padding: .5rem;
-        margin: .5rem; }
+        margin: .5rem;
+        padding: .5rem; }
 
 @keyframes fadein {
   from {
@@ -253,3 +276,35 @@ there.
     background-position: 94% 100%; }
   100% {
     background-position: 7% 0%; } }
+
+@keyframes donut-spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.donut {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: donut-spin 1.2s linear infinite; }
+
+.loader_wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100; }
+  .loader_wrapper .loader_content {
+    padding: 1rem;
+    border-radius: .5rem;
+    background: grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .loader_wrapper .loader_content strong {
+      color: white; }

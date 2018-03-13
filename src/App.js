@@ -22,7 +22,6 @@ import react from './images/skills/react.svg'
 import terminal from './images/skills/terminal.svg'
 import trello from './images/skills/trello.svg'
 
-//blender
 var skillsArray = [js, html, css, jquery, backbone, react, node, mongodb, terminal, git, github, photoshop, illustrator]
 class App extends Component {
 
@@ -30,8 +29,13 @@ class App extends Component {
     super(props)
     this.state =
     {
-      currentModal: null
+      currentModal: null,
+      aTagLoading: false
     } 
+  }
+
+  aTagClick(){
+    this.setState({aTagLoading: true})
   }
 
   projectSeeMore(project){
@@ -44,7 +48,7 @@ class App extends Component {
 
     var projComponent = null
     
-    projComponent = <Modal project={project} closeModal={closeModal.bind(this)} />
+    projComponent = <Modal project={project} closeModal={closeModal.bind(this)} viewLive={this.aTagClick.bind(this)} />
 
 
     if(projComponent){
@@ -77,6 +81,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+        {this.state.aTagLoading? <div className="loader_wrapper">
+          <div className="container loader_content">
+
+            <div className="donut">
+            </div>
+
+            <div>
+              <strong>some of my websites are hosted on heroku, this may take a moment to load</strong>
+            </div>
+
+          </div>
+        </div> : null}
 
         {this.state.currentModal? this.state.currentModal : null}
 
@@ -224,7 +241,7 @@ class Modal extends Component{
   }
   
   render(){
-    var {seeMore, closeModal} = this.props
+    var {seeMore, closeModal, viewLive} = this.props
     var {name, title, video, source, site} = this.props.project
     if(this.state){
       var {description, githubUrl, homepage} = this.state
@@ -235,18 +252,22 @@ class Modal extends Component{
     <div className="modal_wrapper">
         
       <div className="modal_content pulsing_anim">
-        <div className="container">
+
+        <div className="container close_modal_wrapper">
           <button className="close_modal" onClick={()=>{closeModal()}}>close</button>
-          <div className="modal_header"><h5>{title}</h5></div>
+        </div>
+
+        <div className="container">
+          
+          {homepage? <div className="modal_header row"><div className="columns twelve"><h5><a onClick={()=>{viewLive()}} href={homepage}>{title} - live link</a></h5></div></div> : null}
           <div className="row">
             <div className="eight columns modal_image">
               <iframe className="u-max-full-width" width="560" height="315" src={video} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
 
             <div className="four columns modal_text">
+              {githubUrl? <a className="view_source" href={githubUrl}><img src={github} /></a> : null}
               {description? <p>{description}</p> : null}
-              {githubUrl? <a href={githubUrl}>source</a> : null}
-              {homepage? <a href={homepage}>view live</a> : null}
             </div>
           </div>
         </div>
