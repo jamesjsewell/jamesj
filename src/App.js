@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import refugeeRequests from './images/refugee-requests.png'
 import snake from './images/snake.png'
 import weather from './images/weather.png'
@@ -34,17 +34,17 @@ class App extends Component {
     } 
   }
 
-  projectSeeMore(title, description, video){
+  projectSeeMore(project){
 
-
-    function close(){
+    function closeModal(){
       this.setState({currentModal: null})
       document.body.classList.toggle('modal_open', false)
+      this.setState({githubUrl: null, homepage: null, description: null })
     }
 
     var projComponent = null
     
-    projComponent = <Modal title={title} description={description} video={video} close={close.bind(this)} />
+    projComponent = <Modal project={project} closeModal={closeModal.bind(this)} />
 
 
     if(projComponent){
@@ -57,17 +57,17 @@ class App extends Component {
   renderProjects(){
 
     var projects = {
-      refugeeRequests: {title:"Inventory Management Prototype", name: "refugeeRequests", description: "asdfsadf", video: "https://www.youtube.com/embed/eOykScleL08?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1"},
+      refugeeRequests: {title:"Inventory Management Prototype", name: "help_harvey_evacuees", video: "https://www.youtube.com/embed/eOykScleL08?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1"},
       sifter: {title:"Unearthed Hackathon Submission", name: "sifter", description: "dfadsfa", video: "https://www.youtube.com/embed/4KPtIy6wtsM?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1"},
-      snakeRemake: {title: "Remake of Snake", name:"snake", description: "fasdfasdf", video: "https://www.youtube.com/embed/muzEI9s64Xs?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" },
-      spaceApps: {title:"Space Apps Challenge Submission", description: "adfsdfadf", name: "refugeeRequests", video: "https://www.youtube.com/embed/wZ2Xs0BpLXw?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" },
-      weather: {title:"Weather App Project", name: "weather", description: "adfsdd", video: "https://www.youtube.com/embed/WngJ6D0-NUo?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1"}
+      snakeRemake: {title: "Remake of Snake", name:"redux_snake", description: "fasdfasdf", video: "https://www.youtube.com/embed/muzEI9s64Xs?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" },
+      spaceApps: {title:"Space Apps Challenge Submission", description: "adfsdfadf", name: "asteroidhunt", video: "https://www.youtube.com/embed/wZ2Xs0BpLXw?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" },
+      weather: {title:"Weather App Project", name: "weather_app", description: "adfsdd", video: "https://www.youtube.com/embed/WngJ6D0-NUo?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1"}
 
     }
     var projectsArray = []
     for(var i in projects){
       var project = projects[i]
-      projectsArray.push(<Project seeMore={this.projectSeeMore.bind(this)} projectName={project.name} title={project.title} description={project.description} video={project.video} />)
+      projectsArray.push(<Project project={project} seeMore={this.projectSeeMore.bind(this)} />)
     }
 
     return projectsArray
@@ -76,7 +76,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className={this.state.currentModal? "App pulsing_anim" : "App pulsing_anim"}>
+      <div className="App">
 
         {this.state.currentModal? this.state.currentModal : null}
 
@@ -153,7 +153,7 @@ class App extends Component {
         </div>
       
         <div className="projects_section_wrapper row container">
-          <div className="projects_header"><h5><span>Webapp Projects</span></h5></div>
+          <div className="projects_header"><h5>Webapp Projects</h5></div>
 
           <div className="projects_wrapper twelve columns">
             {this.renderProjects()}
@@ -181,16 +181,17 @@ class Project extends Component{
   constructor(props){
     super(props)
   }
-  
+
   render(){
-    var {seeMore, projectName, title, description, video} = this.props
+    var {seeMore} = this.props
+    var {name, title, description, video} = this.props.project
     return (
       <div className="project_wrapper">
         <p>{title}</p>
         <div className="image_bounds">
           <iframe className="u-max-full-width project_thumbnail" width="560" height="315" src={video} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
-        <button onClick={()=>{seeMore(title, description, video)}} type="button"><strong className="u-max-full-width">more</strong></button>
+        <button onClick={()=>{seeMore(this.props.project)}} type="button"><strong className="u-max-full-width">more</strong></button>
       </div>
     )
   }
@@ -200,16 +201,36 @@ class Modal extends Component{
 
   constructor(props){
     super(props)
+    var theContext = this
+    var repoUrl = `https://api.github.com/repos/jamesjsewell/${this.props.project.name}`
+    fetch(repoUrl)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(repojson) {
+      var githubUrl = repojson.clone_url
+      var homepage = repojson.homepage
+      var description = repojson.description
+      theContext.setState({githubUrl: githubUrl, homepage: homepage, description: description })
+      console.log(theContext)
+    });
+
   }
   
   render(){
-    var {title, description, video, close} = this.props
+    var {seeMore, closeModal} = this.props
+    var {name, title, video, source, site} = this.props.project
+    if(this.state){
+      var {description, githubUrl, homepage} = this.state
+    }
+   
+    
     return ( 
     <div className="modal_wrapper">
         
       <div className="modal_content pulsing_anim">
         <div className="container">
-          <button className="close" onClick={()=>{close()}}>close</button>
+          <button className="close_modal" onClick={()=>{closeModal()}}>close</button>
           <div className="modal_header"><h5>{title}</h5></div>
           <div className="row">
             <div className="eight columns modal_image">
@@ -217,7 +238,9 @@ class Modal extends Component{
             </div>
 
             <div className="four columns modal_text">
-              <p>{description}</p>
+              {description? <p>{description}</p> : null}
+              {githubUrl? <a href={githubUrl}>view source on github</a> : null}
+              {homepage? <a href={homepage}>view live</a> : null}
             </div>
           </div>
         </div>
