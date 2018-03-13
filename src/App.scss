@@ -302,10 +302,9 @@ html{
   .modal_content{
     width: 100%;
     height: auto;
-    position: relative;
     border-radius: .5rem;
     position: absolute;
-    top: 20px;
+    top: 100px;
     left: 50%;
     transform: translate(-50%, 0);
     padding: 1rem;
@@ -319,13 +318,12 @@ html{
       }
     }
 
-    /* Larger than phablet (also point when grid becomes active) */
-    @media (min-width: 550px) {
+    /* Larger than tablet */
+    @media (min-width: 750px) {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-
+      transform: translate(-50%, -50%);  
     }
 
     background: grey;
