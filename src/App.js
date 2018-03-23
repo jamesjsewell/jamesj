@@ -185,7 +185,7 @@ develop personal projects.</p>
         </div>
         <div className="footer_wrapper container">
           <div className="footer">
-            <strong>this website was written by James Sewell utilizing Reactjs and Skeleton CSS boilerplate. Source code for this website can be hound <a href="https://github.com/jamesjsewell/jamesj">here</a></strong>
+            <strong>this website was written by James Sewell utilizing Reactjs and Skeleton CSS boilerplate. Source code for this website can be found <a href="https://github.com/jamesjsewell/jamesj">here</a></strong>
           </div>
         </div>
 
